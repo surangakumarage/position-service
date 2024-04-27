@@ -51,7 +51,7 @@ class PositionServiceApplicationTests {
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(productRequestString))
 				.andExpect(status().isCreated());
-		Assertions.assertEquals(1, positoinRepository.findAll().size());
+		Assertions.assertEquals(3, positoinRepository.findAll().size());
 	}
 
 	private PositionRequest getPositionRequest() {
