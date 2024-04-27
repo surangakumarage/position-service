@@ -38,7 +38,7 @@ public class PositionService {
             position = positoinRepository.getById(tradeRequest.getPosition_id());
         }catch(EntityNotFoundException e){
             log.info("invalid position");
-           new PositionException(e.getMessage()) ;
+           throw new PositionException(e.getMessage()) ;
         }
 
 
