@@ -2,8 +2,6 @@ package com.hcl.position.positionservice.service;
 
 import com.hcl.position.positionservice.dto.PositionRequest;
 import com.hcl.position.positionservice.dto.TradeRequest;
-import com.hcl.position.positionservice.exception.PositionException;
-import com.hcl.position.positionservice.exception.PositionNotFoundException;
 import com.hcl.position.positionservice.model.Position;
 import com.hcl.position.positionservice.repository.PositoinRepository;
 import com.hcl.position.positionservice.util.TRADE_TYPE;
@@ -38,7 +36,7 @@ public class PositionService {
             position = positoinRepository.getById(tradeRequest.getPosition_id());
         }catch(EntityNotFoundException e){
             log.info("invalid position");
-           new PositionException(e.getMessage()) ;
+
         }
 
 
